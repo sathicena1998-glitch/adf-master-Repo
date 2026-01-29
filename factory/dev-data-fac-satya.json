@@ -1,0 +1,9 @@
+{
+	"name": "dev-data-fac-satya",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "781d1405-e9a3-4232-be0a-dee9564f199c",
+		"tenantId": "b8e4a955-9c57-4649-b3bc-d2a42149ac64"
+	}
+}

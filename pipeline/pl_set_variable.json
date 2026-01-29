@@ -1,0 +1,71 @@
+{
+	"name": "pl_set_variable",
+	"properties": {
+		"activities": [
+			{
+				"name": "Set variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "static_variable",
+					"value": "sucess"
+				}
+			},
+			{
+				"name": "Set variable2",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "static_variable",
+					"value": "fail"
+				}
+			},
+			{
+				"name": "Set variable3",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Set variable2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "static_variable",
+					"value": "mawa"
+				}
+			}
+		],
+		"variables": {
+			"static_variable": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-01-19T13:07:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
